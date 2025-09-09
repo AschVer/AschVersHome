@@ -10,8 +10,7 @@
 	"scripts": {
 		"predev": "gulp build",
 		"dev": "gulp watch",
-		"build": "gulp build",
-		"deploy": "gh-pages -d dist"
+		"build": "gulp build"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.4.4",
