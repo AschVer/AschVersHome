@@ -1,13 +1,13 @@
 {
 	"head": {
-		"title": "AV",
+		"title": "AschVer's Home",
 		"description": "Author:AschVer,Category:Personal Blog",
 		"favicon": "favicon.ico"
 	},
 	"intro": {
-		"title": "我是AV",
+		"title": "AschVer",
 		"subtitle": "A lazy student",
-		"enter": "了解更多",
+		"enter": "More",
 		"supportAuthor": true,
 		"background": true
 	},
