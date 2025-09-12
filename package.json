@@ -1,12 +1,12 @@
 {
-	"name": "simonaking-homepage",
+	"name": "aschver-homepage",
 	"version": "1.0.0",
-	"author": "SimonAKing <hi@simonaking.com>",
+	"author": "AschVer <hi@AschVer.com>",
 	"license": "LGPI-3.0",
-	"homepage": "http://simonaking.com",
-	"repository": "https://github.com/SimonAKing/HomePage",
-	"bugs": "https://github.com/SimonAKing/HomePage/issues",
-	"description": "SimonAKing-homepage",
+	"homepage": "http://094918.xyz",
+	"repository": "https://github.com/AschVer/AschVersHome",
+	"bugs": "https://github.com/AschVer/AschVersHome/issues",
+	"description": "aschver-homepage",
 	"scripts": {
 		"predev": "gulp build",
 		"dev": "gulp watch",
