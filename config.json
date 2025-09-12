@@ -15,7 +15,7 @@
 		"name": "AschVer",
 		"signature": "Life is more than what you see",
 		"avatar": {
-			"link": "docs/assets/avatar.jpg",
+			"link": "assets/avatar.jpg",
 			"height": "100",
 			"width": "100"
 		},
