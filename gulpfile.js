@@ -51,7 +51,7 @@ gulp.task('js', function () {
 
 gulp.task('pug', function () {
 	return gulp
-		.src(['./src/index.pug', './src/blog.pug'])
+		.src(['./src/index.pug', './src/blog.pug', './src/about.pug'])
 		.pipe(pug({ data: config }))
 		.pipe(gulp.dest(outputDir))
 })
