@@ -1,0 +1,127 @@
+// 博客页面样式
+@import 'common/variable.less';
+
+.blog-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: @color-content;
+  font-family: @font-alt;
+  padding: 2rem 0;
+}
+
+.blog-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, @color-link, @color-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .blog-subtitle {
+    font-size: 1.2rem;
+    color: @color-link;
+    opacity: 0.8;
+  }
+}
+
+.blog-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.blog-post {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .post-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: @color-title;
+    text-decoration: none;
+    display: block;
+    
+    &:hover {
+      color: @color-link;
+    }
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+    color: @color-link;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+  
+  .post-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: @color-content;
+    margin-bottom: 1rem;
+  }
+  
+  .read-more {
+    color: @color-link;
+    text-decoration: none;
+    font-weight: 500;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.blog-nav {
+  text-align: center;
+  margin-top: 3rem;
+  
+  .back-home {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, @color-link, @color-title);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-list {
+    padding: 0 1rem;
+  }
+  
+  .blog-post {
+    padding: 1.5rem;
+  }
+  
+  .blog-post .post-title {
+    font-size: 1.4rem;
+  }
+}
