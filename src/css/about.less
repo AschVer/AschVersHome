@@ -1,12 +1,43 @@
 // About页面样式
 @import 'common/variable.less';
 
+// 添加纹理背景
+.about-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.08) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .about-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 20, 30, 0.8) 50%, rgba(0, 0, 0, 0.9) 100%);
+  backdrop-filter: blur(10px);
   color: @color-content;
   font-family: @font-alt;
   padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  // 添加微妙的噪点纹理
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxmaWx0ZXIgaWQ9Im5vaXNlIj4KICAgICAgPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+');
+    opacity: 0.3;
+    z-index: -1;
+  }
 }
 
 .about-header {
@@ -19,12 +50,13 @@
     background: linear-gradient(45deg, @color-link, @color-title);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: @color-title;
     background-clip: text;
   }
   
   .about-subtitle {
     font-size: 1.2rem;
-    color: @color-link;
+    color: @color-title;
     opacity: 0.8;
   }
 }
@@ -36,17 +68,40 @@
 }
 
 .about-section {
-  background: rgba(255, 1, 1, 0.05);
-  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(40, 40, 40, 0.6) 0%, rgba(25, 25, 25, 0.8) 100%);
+  border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  // 添加内部光泽效果
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    transition: left 0.6s ease;
+  }
+
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 12px 35px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    
+    &::before {
+      left: 100%;
+    }
   }
   
   h2 {
@@ -60,7 +115,7 @@
   p {
     font-size: 1rem;
     line-height: 1.8;
-    color: @color-content;
+    color: @color-title;
     margin-bottom: 1rem;
   }
   
@@ -72,17 +127,43 @@
   }
   
   .skill-tag {
-    background: linear-gradient(45deg, @color-link, @color-title);
+    background: linear-gradient(135deg, rgba(80, 80, 80, 0.8) 0%, rgba(40, 40, 40, 0.9) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    
+    // 添加微妙的光泽效果
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
     
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
+      
+      &::before {
+        transform: rotate(45deg) translate(50%, 50%);
+      }
     }
   }
   
@@ -127,16 +208,41 @@
   .back-home {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(45deg, @color-link, @color-title);
+    background: linear-gradient(135deg, rgba(60, 60, 60, 0.8) 0%, rgba(30, 30, 30, 0.9) 100%);
     color: white;
     text-decoration: none;
     border-radius: 25px;
     font-weight: 500;
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 6px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    
+    // 添加光泽效果
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
     
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
+      
+      &::before {
+        left: 100%;
+      }
     }
   }
 }
@@ -158,6 +264,7 @@
   .about-section h2 {
     font-size: 1.4rem;
   }
+
   
   .skills-list {
     gap: 0.5rem;
